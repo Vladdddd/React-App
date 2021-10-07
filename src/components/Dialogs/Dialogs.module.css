@@ -1,0 +1,25 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 3fr 10fr;
+    color: #3f3e5e;
+    border-radius: 8px;
+    min-height: 800px;
+}
+
+.dialogsItems .dialog{
+    padding: 20px;
+}
+
+.dialog a {
+    text-decoration: none;
+    color: #3f3e5e;
+}
+
+.dialogsItems .active {
+    color:#23d2e3;
+}
+
+.messages .message {
+    padding: 20px;
+}
+

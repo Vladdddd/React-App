@@ -1,0 +1,23 @@
+.nav {
+  grid-area: nav;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.item {
+  text-align: center;
+  padding: 10px;
+}
+
+.item a {
+  text-decoration: none;
+	color: #3f3e5e;
+}
+
+.item a.active {
+  color: #23d2e3;
+}
+
+.item .friends {
+    font-size: 12px;
+}

@@ -1,0 +1,266 @@
+.profileContent .description{
+	padding: 0px;
+}
+
+.background {
+    background-color: white;  
+}
+
+.images {
+    position: relative;
+}
+
+.images .art {
+	width: 100%;
+	height: 200px;
+	border-radius: 10px 10px 0 0;
+}
+
+.greenBorder {
+    outline: 4px solid lightgreen;
+    position: absolute;
+    left: 46%;
+    top: 72%;
+
+	width: 90px;
+	height: 90px;
+	border-radius: 45px;
+    
+    flex-grow: 1;
+    z-index: 2;
+    background-color: white;
+}
+
+.redBorder {
+    outline: 4px solid white;
+    position: absolute;
+    left: 46%;
+    top: 72%;
+
+	width: 90px;
+	height: 90px;
+	border-radius: 45px;
+    
+    flex-grow: 1;
+    z-index: 2;
+    background-color: white;
+}
+
+.changePhoto {
+    position: absolute;
+    left: 46.5%;
+    top: 78%;
+    z-index: 3;
+    opacity: 0;
+    z-index: 51;
+}
+
+.file {
+    width: 25px;
+}
+
+
+.changePhotoPic {
+    right: 51.5%;
+    bottom: 8%;
+
+    z-index: 3;
+    position: absolute;
+    opacity: 0.3;
+    width: 25px;
+    
+    
+}
+
+
+.description {
+    margin: 40px 0 0 0px;
+
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    grid-template-areas: "stats name links";
+}
+
+.name {
+    grid-area: name;
+
+    background-color: white;
+    display: flex;
+    align-items: center;
+    
+    flex-direction: column;
+}
+
+.stats {
+    grid-area: stats;
+    display: flex;
+    justify-content: space-around;
+
+    text-align: center;
+    align-items: center;
+    
+}
+
+.stats div h1 {
+    margin: 0;
+    font-size: 18px;
+    color: #3e3f5d;
+    
+    width: 30px;
+    height: 31.5px;
+}
+
+.stats div p {
+    margin: 0;
+    color: #aeb0bf;
+        
+}
+
+.stats div img {
+    width: 30px;
+    height: 31.5px;
+    
+    border-radius: 5px;
+
+    padding-top: 1.5px;
+}
+
+.border {
+    border-right: 1px solid #ebe9f4; 
+    
+}
+
+.links {
+    grid-area: links;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    text-align: center;
+}
+
+.links p {
+    
+    margin: 0;
+    color: #aeb0bf;
+
+    
+}
+
+.links div img {
+    width: 30px;
+    opacity: 0.75;
+}
+
+.name {
+    flex-grow: 1;
+}
+
+.name h1, .name h2 {
+    text-align: center;
+    margin: 0;
+    text-transform: uppercase;
+    
+    color: #3e3f5d;     
+
+}
+
+.name h1 {
+    font-weight: 500;
+    font-size: 19px;
+    
+}
+
+.name h2 {
+    font-weight: 400;
+    font-size: 17px;
+
+}
+
+.mainInfo {
+    background-color: white;
+    
+    margin-top: 0px;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+}
+
+.profileNav {
+    height: 85px;
+    margin: 20px 0 20px 0;
+    border-radius: 10px;
+
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.borderNav {
+    width: 0.5px;
+    height: 26px;
+    
+    background-color: #cfcfd9;
+}
+
+.navImg {
+    width: 12%; 
+
+    display: flex;
+    justify-content: center;
+}
+
+.active {
+    width: 100%;
+    border-bottom: 3.5px solid #24d1e0;
+    
+    display: flex;
+    justify-content: center;
+}
+
+.imgNav {
+    text-align: center;
+    width: 25px;
+    padding: 30px 0 30px 0;
+    
+}
+
+.firstBorder {
+    margin-left: 15px;
+}
+
+.lastBorder {
+    margin-right: 15px;
+}
+
+@media screen and (max-width: 1200px) {
+
+    .name h1 {
+        font-size: 16px;
+    }
+
+    .name h2 {
+        font-size: 14px;
+    }
+
+    .images .pic {
+        left: 44.5%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .name h1 {
+        font-size: 15px;
+    }
+
+    .name h2 {
+        font-size: 13px;
+    }
+
+    .images .pic {
+        left: 44%;
+    }
+
+}

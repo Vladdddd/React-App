@@ -1,0 +1,103 @@
+.info {
+    margin: 25px;
+}
+
+.roles {
+    display: flex;
+    justify-content: space-around;
+
+    height: 400px;
+    text-align: center;
+}
+
+.baseRoles, .advancedRoles {
+    width: 50%;
+    background-color: white;
+    border-radius: 10px;
+
+    color: #3c3f60;
+}
+
+.baseRoles {
+    margin-right: 10px;
+    
+}
+
+.baseRoles h1 {
+    padding: 10px;
+    margin: 0 0 10px 0;
+
+   
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+.pos {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.pos p {
+    margin: 0 0 0 5px;
+    color: #3c3f60;
+
+    line-height: 19px;
+    height: 22px;
+    width: 400px;
+    text-align: start;
+}
+
+.role {
+    border-radius: 20px;
+
+    margin: 0 0 10px 0;
+
+    line-height: 20px;
+    height: 22px;
+    
+    text-align: center;
+
+    width: 100px;
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+.role_org {
+    background-color: #23d2e3;
+    color: white;
+    
+}
+
+.role_exp {
+    background-color: blueviolet;
+    color: white;
+}
+
+.advancedRoles h1 {
+    padding: 10px;
+    margin: 0;
+
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+.role_admin {
+    background-color: red;
+    color: white;
+}
+
+.advancedRoles {
+    margin-left: 12px;
+}
+
+.siteInfo {
+    height: 400px;
+    margin-top: 20px;
+
+    text-align: center;
+    background-color: white;
+    border-radius: 12px;
+}

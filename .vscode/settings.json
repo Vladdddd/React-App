@@ -1,0 +1,12 @@
+{
+    "git.showCommitInput": false,
+    "git.untrackedChanges": "hidden",
+    "git.confirmForcePush": false,
+    "git.autorefresh": false,
+    "git.branchSortOrder": "alphabetically",
+    "git.confirmSync": false,
+    "git.confirmNoVerifyCommit": false,
+    "git.countBadge": "off",
+    "git.decorations.enabled": false,
+    "editor.minimap.enabled": false
+}

@@ -5,3 +5,27 @@
 .formControl .errorText {
     color: red;
 }
+
+.field {
+    margin-top: 20px;
+    color: #403f61;
+    font-weight: 500;
+    font-size: 12px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.field input[type="password"], .field input[type="login"] {
+    padding: 14.5px;
+    border: 1.2px solid #cfcfd9;
+    border-radius: 10px;
+
+    width: 310px;
+
+    color: #403f61;
+}
+
+.field input[type="text"] {
+    width: 20px;
+}

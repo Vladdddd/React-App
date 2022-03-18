@@ -1,13 +1,32 @@
+.dialogsPage {
+    display: flex;
+    justify-content: space-around;
+}
+
 .dialogs {
     display: grid;
     grid-template-columns: 3fr 10fr;
+    grid-template-rows: 2fr;
     color: #3f3e5e;
-    border-radius: 8px;
-    min-height: 800px;
+    border-radius: 10px 0px 0 10px;
+    width: 30%;
+    height: 700px;
+
+    background-color: white;
+    margin: 25px;
+    margin-right: 0;
 }
 
 .dialogsItems .dialog{
+    height: 20px;
+    line-height: 20px;
+
     padding: 20px;
+    color: #3e3f5e;
+
+    font-size: 18px;
+    font-weight: 500;
+    
 }
 
 .dialog a {
@@ -20,6 +39,39 @@
 }
 
 .messages .message {
+    height: 20px;
+    line-height: 20px;
+
     padding: 20px;
+    font-size: 14px;
+
 }
 
+.selectedDialog {
+    margin: 25px;
+    margin-left: 0;
+
+    background: linear-gradient(rgba(97,93,250, 0.7), rgba(97,93,250, 0.9)), linear-gradient(white, white);
+
+
+    width: 70%;
+    height: 700px;
+
+    border-radius: 0px 10px 10px 0px;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selectedDialog p {
+    width: 250px;
+    border-radius: 15px;
+    padding: 5px;
+    height: 22px;
+    line-height: 20px;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05));
+    text-align: center;
+    color: white;
+}

@@ -1,20 +1,19 @@
 body {
-  background-color: #f2f4fa;
+  background-color: #f5f4f9;
 }
 
 .app-wrapper { 
   display: grid;
 
-  max-width: 1400px;
+  max-width: 100%;
   margin: 0 auto;
 
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
-  grid-gap: 10px;
+  grid-template-rows: 51px 1fr;
+  grid-template-columns: 1.5fr 9.5fr 0.5fr;
 
   grid-template-areas:  
-  "header header"
-  "nav main";
+  "header header header"
+  "nav main friends";
 }
 
 .app-wrapper-content {

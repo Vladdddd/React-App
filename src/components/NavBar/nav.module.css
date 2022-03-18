@@ -1,7 +1,7 @@
 .nav {
   grid-area: nav;
   background-color: #ffffff;
-  border-radius: 8px;
+  min-height: 1000px;
 }
 
 .item {

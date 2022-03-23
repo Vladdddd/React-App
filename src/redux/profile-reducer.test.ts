@@ -1,18 +1,29 @@
-import { PostType, ProfileType } from "../types/types";
-import profileReducer, { actions } from "./profile-reducer";
+import profileReducer, { actions, InitialStateType } from "./profile-reducer";
 
-let state = {
-    posts: [
-        { id: 1, mess: 'Hello, new user. I love you', name: 'Griforii', age: 54 },
-        { id: 2, mess: 'Hey, bro', name: 'Artemon', age: 21 }
-    ] as Array<PostType>,
+let state: InitialStateType 
 
-    newPostText: 'it-genius',
-    profile: null as ProfileType | null,
-    fullnes: 0,
-    status: '',
-    temporarilyForFriends: 'Andrii'
-};
+beforeEach(() => {
+    state = {
+        posts: [
+            { id: 1, mess: 'Hello, new user. I love you', name: 'Griforii', age: 54 },
+            { id: 2, mess: 'Hey, bro', name: 'Artemon', age: 21 }
+        ],
+    
+        newPostText: 'it-genius',
+        profile: {
+            userId: 1,
+            lookingForAJob: "",
+            lookingForAJobDescription: "",
+            fullName: "1",
+            contacts: {github: "", vk: "",facebook: "", instagram: "" ,twitter: ""  ,website: "" ,youtube: "" ,mainLink: ""},
+            photos: {small: null, large: null},
+            aboutMe: ""
+        },
+        fullnes: 0,
+        status: '',
+        temporarilyForFriends: 'Andrii'
+    }
+})
 
 test('length of posts should be incremented', () => {    
     let action = actions.addPostActionCreator("testText");
@@ -33,5 +44,5 @@ test('after deleting length of messages should be decrement', () => {
 
     let newState = profileReducer(state, action);
 
-    expect(newState.posts.length).toBe(2);
+    expect(newState.posts.length).toBe(1);
 });

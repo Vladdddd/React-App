@@ -143,7 +143,7 @@ export default profileReducer;
 
 /* Types */
 
-type InitialStateType = typeof initialState;
+export type InitialStateType = typeof initialState;
 type ActionsType = InferActionsTypes<typeof actions>
 
 type ThunkType = BaseThunkType<ActionsType, Promise<void>>

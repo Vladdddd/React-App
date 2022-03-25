@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { InjectedFormProps, reduxForm } from 'redux-form';
 import { createField, GetStringKeys, Input } from '../common/formsControls/formsControls';
 import { maxLengthCreator, required } from '../utils/validators';
@@ -46,14 +46,6 @@ const LoginForm: React.FC<InjectedFormProps<LoginFormValuesType, LoginFormProps>
 
 const LoginReduxForm = reduxForm<LoginFormValuesType, LoginFormProps>({ form: 'login' })(LoginForm)
 
-type MapStatePropsType = {
-    captchaUrl: string | null
-    isAuth: boolean
-}
-
-type MapDispatchPropsType = {
-    login: (email: string, password: string, rememberMe: boolean, captcha: string | null) => void
-}
 
 export type LoginFormValuesType = {
     email: string
@@ -64,15 +56,20 @@ export type LoginFormValuesType = {
 
 export type LoginFormValuesTypeKeys = GetStringKeys<LoginFormValuesType>    
 
+export const Login: React.FC = (props) => {
+
+    const captchaUrl = useSelector( (state: AppStateType) => state.auth.captchaUrl)
+    const isAuth = useSelector( (state: AppStateType) => state.auth.isAuth)
+
+    const dispatch = useDispatch()
 
 
 
-const Login: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
     const onSubmit = (formData: LoginFormValuesType) => {
-        props.login(formData.email, formData.password, formData.rememberMe, formData.captcha);
+        dispatch(login(formData.email, formData.password, formData.rememberMe, formData.captcha))
     }
 
-    if (props.isAuth) {
+    if (isAuth) {
         return <Redirect to={"/profile"} />
     }
 
@@ -80,7 +77,7 @@ const Login: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
         <div className={s.reduxForm}>
             <div className={s.form}>
                 <h1>Account Login</h1>
-                <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} />
+                <LoginReduxForm onSubmit={onSubmit} captchaUrl={captchaUrl} />
                 <p className={s.loginInfo}>
                     You'll receive a confirmation email in your inbox with a link to 
                     activate your account, if you have any problem, contact us
@@ -90,9 +87,3 @@ const Login: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
     );
 }
 
-const mapStateToProps = (state: AppStateType): MapStatePropsType => ({
-    isAuth: state.auth.isAuth,
-    captchaUrl: state.auth.captchaUrl
-})
-
-export default connect(mapStateToProps, { login })(Login);

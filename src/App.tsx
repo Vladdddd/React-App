@@ -1,25 +1,27 @@
-import React, { Component, Suspense } from 'react';
-import './App.css';
-import HeaderContainer from './components/Header/HeaderContainer';
-import { Route } from 'react-router-dom';
-import NavContainer from './components/NavBar/NavContainer';
-import Login from './components/Login/Login';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import { compose } from 'redux';
+import React, { Component, Suspense } from 'react'
+import './App.css'
+import HeaderContainer from './components/Header/HeaderContainer'
+import { Route } from 'react-router-dom'
+import NavContainer from './components/NavBar/NavContainer'
+import { Login } from './components/Login/Login'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
+import { compose } from 'redux'
 import { initializeApp } from './redux/app-reducer'
-import Preloader from './components/common/preloader/preloader';
-import store, { AppStateType } from './redux/redux-store';
-import { BrowserRouter, Switch } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import NewsContainer from './components/News/NewsContainer';
-import FriendsContainer from './components/Friends/FriendsContainer';
-import Info from './components/Info/Info';
+import Preloader from './components/common/preloader/preloader'
+import store, { AppStateType } from './redux/redux-store'
+import { BrowserRouter, Switch } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import NewsContainer from './components/News/NewsContainer'
+import FriendsContainer from './components/Friends/FriendsContainer'
+import Info from './components/Info/Info'
+import { UsersPage } from './components/Users/UsersContainer'
+import { ProfilePage } from './components/Profile/ProfileContainer'
 
 //React lazy - ленивая загрузка, компоненты загружаются по мере необходимости
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
-const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
-const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'));
+//const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
+//const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'));
 
 type StatePropsType = ReturnType<typeof mapStateToProps>
 type DispatchPropsType = {
@@ -55,8 +57,8 @@ class App extends Component<StatePropsType & DispatchPropsType> {
                         <Switch>{/* Switch проходит по всем роутам и сравнивает path с текущим url */} 
                             <Route exact path='/' render={() => <div>Hello user!</div>} />
                             <Route exact path='/dialogs' render={() => <DialogsContainer />} />
-                            <Route path='/profile/:userId?' render={() => <ProfileContainer />} />
-                            <Route path='/users' render={() => <UsersContainer pageTitle={"Samurai"}/>} />
+                            <Route path='/profile/:userId?' render={() => <ProfilePage />} />
+                            <Route path='/users' render={() => <UsersPage />} />
                             <Route path='/login' render={() => <Login />} />
                             <Route path='/news' render={() => <NewsContainer />} />
                             <Route path='/info' render={() => <Info />} />

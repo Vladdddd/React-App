@@ -5,26 +5,35 @@ import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 import art from '../../../assets/images/second-profile-art.jpg';
 import cn from 'classnames';
 import ProfileNav from './ProfileNav';
-import { ProfileType } from '../../../types/types';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppStateType } from '../../../redux/redux-store';
+import { savePhoto, updateStatus } from '../../../redux/profile-reducer';
 
-type PropsType = {
-    profile: ProfileType
-    status: string
-    isOwner: boolean
-    userId: string
 
-    savePhoto: (file: File) => void
-    updateStatus: (status: string) => void
-}
+const ProfileInfo: React.FC = (props) => {
 
-const ProfileInfo: React.FC<PropsType> = ({ profile, status, updateStatus, isOwner, savePhoto, userId }) => {
+    const profile = useSelector((state: AppStateType) => state.profilePage.profile)
+    const status = useSelector((state: AppStateType) => state.profilePage.status)
+    const isOwner = useSelector((state: AppStateType) => state.auth.isMe)
+    const userId = useSelector((state: AppStateType) => state.auth.userId)
+
+    const dispatch = useDispatch()
+
+    const updateStatusDispatch = (status: string) => {
+        dispatch(updateStatus(status))
+    }
+
+    const savePhotoDispatch = (photo: File) => {
+        dispatch(savePhoto(photo))
+    }
+
     if (!profile) {
         return <Preloader />
     }
 
     const onMainPhotoSelected = (e: ChangeEvent<HTMLInputElement>) => {
         if (e.target.files?.length) {
-            savePhoto(e.target.files[0]);
+            savePhotoDispatch(e.target.files[0]);
         }
     }
 
@@ -82,7 +91,7 @@ const ProfileInfo: React.FC<PropsType> = ({ profile, status, updateStatus, isOwn
             
             <div className={s.mainInfo}>
                 <br />
-                <ProfileStatusWithHooks updateStatus={updateStatus} status={status} isOwner={isOwner}/>
+                <ProfileStatusWithHooks updateStatus={updateStatusDispatch} status={status} isOwner={isOwner}/>
                 <br />
             </div>
 

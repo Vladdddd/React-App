@@ -3,7 +3,7 @@ import s from './ProfileInfo.module.css';
 import cn from 'classnames';
 
 type PropsType = {
-    userId: string
+    userId: number | null
 }
 
 const ProfileNav: React.FC<PropsType> = ({ userId }) => {

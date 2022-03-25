@@ -1,28 +1,21 @@
 import React from 'react';
-import { ProfileType } from '../../types/types';
 import s from './profile.module.css';
 import MyPostsContainer from './MyPosts/MyPostsContainer';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
-type PropsType = {
-    profile: ProfileType
-    status: string
-    isOwner: boolean
-    userId: string
-
-    savePhoto: (photo: File) => void
-    updateStatus: (status: string) => void
+type PropsType = {    
 }
 
-const Main: React.FC<PropsType> = ({profile, status, updateStatus, isOwner, savePhoto, userId}) => {
+export const Profile: React.FC<PropsType> = () => {
+
+
+
     return (
         <main className={s.content}>
-            <ProfileInfo savePhoto={savePhoto} isOwner={isOwner} profile={profile} status={status} updateStatus={updateStatus} userId={userId}/>
+            <ProfileInfo />
             <MyPostsContainer />
         </main>
     );                                                                                                                      
 }                                                   
-
-export default Main;
 
                                                                                                                 

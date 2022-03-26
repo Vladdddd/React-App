@@ -2,20 +2,14 @@ body {
   background-color: #f5f4f9;
 }
 
-.app-wrapper { 
-  display: grid;
-
-  max-width: 100%;
-  margin: 0 auto;
-
-  grid-template-rows: 51px 1fr;
-  grid-template-columns: 1.5fr 9.5fr 0.5fr;
-
-  grid-template-areas:  
-  "header header header"
-  "nav main friends";
+.ant-layout-sider {
+    background: none !important;
 }
 
-.app-wrapper-content {
-	grid-area: main;
+.site-layout-background {
+    height: 100%;
+}
+
+.site-layout-background .ant-layout-sider-trigger {
+    position: relative;
 }

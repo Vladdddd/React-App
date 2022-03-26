@@ -1,4 +1,6 @@
+import Paragraph from 'antd/lib/typography/Paragraph';
 import React, {useState, useEffect, ChangeEvent} from 'react';
+import s from './ProfileInfo.module.css'
 
 type PropsType = {
     status: string
@@ -8,42 +10,20 @@ type PropsType = {
 }
 
 const ProfileStatusWithHooks: React.FC<PropsType> = (props) => {
-    
-    let [editMode, setEditMode] = useState(false); //деструктурирующее присваивание
-    let [status, setStatus] = useState(props.status);
-    const { isOwner } = props
-    
-    useEffect( () => {
-        setStatus(props.status);
-    }, [props.status]);
 
-    const activateEditMode = () => {
-        if(isOwner) {
-            setEditMode(true);
-        }
-    }
-
-    const deactivateEditMode = () => {
-        setEditMode(false);
-        props.updateStatus(status);
-    }
-
-    const onStatusChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setStatus(e.currentTarget.value);
+    const setStatus = (editableStr: string) => {
+        props.updateStatus(editableStr);
     }
 
     return (
         <>
-            { !editMode &&
-                <div>
-                    <span onDoubleClick={activateEditMode} >{props.status || "-----"}</span>
-                </div>
-            }
-            { editMode &&
-                <div>
-                    <input onChange={onStatusChange} onBlur={deactivateEditMode} autoFocus={true} type="text" value={status}/>
-                </div>  
-            }
+            <Paragraph 
+                editable={{ 
+                    onChange: setStatus, 
+                    maxLength: 45,
+                }}
+                className={s.status}
+            >{props.status || "-----"}</Paragraph>
         </>
     );
 

@@ -1,31 +1,47 @@
 import React from 'react';
-import  s from './header.module.css';
-import { NavLink } from "react-router-dom";
-import { ThunkType } from '../../redux/auth-reducer';
+import { Link } from "react-router-dom";
+import { logout } from '../../redux/auth-reducer';
+import s from './header.module.css'
 
+import { Header } from 'antd/lib/layout/layout';
+import { Col, Row } from 'antd/lib/grid';
+import Menu from 'antd/lib/menu';
 
-export type MapPropsType = {
-    isAuth: boolean
-    login: string | null
-}
+import Avatar from 'antd/lib/avatar';
+import { UserOutlined } from '@ant-design/icons';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectIsAuth, selectLogin } from '../../redux/auth-selectors';
+import Button from 'antd/lib/button';
 
-export type DispatchPropsType = {
-    getAuth: () => void
-    logout: () => ThunkType | Promise<void>
-}
+export const HeaderComponent: React.FC = (props) => {
+    const isAuth = useSelector(selectIsAuth)
+    const login = useSelector(selectLogin)
 
-const Header: React.FC<MapPropsType & DispatchPropsType> = (props) => {
-	return (
-		<header className = {s.header}>
-        	<img src = "https://cdn1.iconfinder.com/data/icons/social-media-vol-3-1/24/_spotify-512.png" alt=""/>
-        <div className={s.loginBlock}>
-            {props.isAuth 
-                ? <span>{props.login}<button className={s.logButton} onClick={props.logout}>Logout</button></span> 
-                : <NavLink to="/login"><span>Login</span></NavLink>} 
-        </div>
-        </header>
+    const dispatch = useDispatch()
+
+    const logoutCallback = () => {
+        dispatch(logout())
+    }
+
+    return (
+        <Header className="header" style={{backgroundColor: "white"}}>
+            <div className="logo"/>
+            <Row>
+                <Col span={22} >
+                    <Menu theme="light" mode="horizontal" defaultSelectedKeys={['2']}>
+                        <Menu.Item key="1"><Link to="/users">Users</Link></Menu.Item>
+                    </Menu>
+                </Col>
+                <Col span={2}>
+                    <Avatar shape="square" icon={<UserOutlined />} />
+                    <div className={s.loginBlock}>
+                        {isAuth
+                            ? <Button onClick={logoutCallback}>Logout</Button>
+                            : <Link to="/login"><Button>Login</Button></Link>}
+                    </div>
+                </Col>
+            </Row>
+        </Header>
     );
 }
-
-export default Header;
 

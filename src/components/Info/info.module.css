@@ -1,5 +1,5 @@
 .info {
-    margin: 25px;
+    margin: 0px 10px;
 }
 
 .roles {
@@ -13,7 +13,7 @@
 .baseRoles, .advancedRoles {
     width: 50%;
     background-color: white;
-    border-radius: 10px;
+
 
     color: #3c3f60;
 }
@@ -99,5 +99,4 @@
 
     text-align: center;
     background-color: white;
-    border-radius: 12px;
 }

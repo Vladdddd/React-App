@@ -11,7 +11,7 @@ export const Profile: React.FC<PropsType> = () => {
 
 
     return (
-        <main className={s.content}>
+        <main>
             <ProfileInfo />
             <MyPostsContainer />
         </main>

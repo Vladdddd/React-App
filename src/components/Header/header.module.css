@@ -1,40 +1,18 @@
 .header {
-  grid-area: header;
-  background-color: #615FF7; 
-  height: 51px;
-}
-
-.header img {
-  height: 40px;
-  width: 40px;
-  margin: 4px 0 0 2%;
-
-  filter: grayscale(1) invert(1);
+    background-color: white !important;
 }
 
 .loginBlock {
     float: right;
-    padding-top: 13.5px;  
+    padding-top: 2%;  
 }
 
-.loginBlock span {
+.loginName {
     text-decoration: none;
     color: white;
     padding-right: 25px;
     font-size: 17px;
 
-    margin-top: 0px;
+    margin: 0 5px 0;
     line-height: 20px;
-}
-
-.logButton {
-    width: 75px;
-    height: 20px;
-
-    font-size: 14px;
-    margin-left: 10px;
-    border-radius: 6px;
-    border: 0;
-    background-color: white;
-    color: #615FF7;
 }

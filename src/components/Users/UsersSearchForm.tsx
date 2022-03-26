@@ -1,8 +1,9 @@
 import React from 'react'
 import { Field, Form, Formik } from 'formik'
 import { FilterType } from '../../redux/users-reducer'
-import { useSelector } from 'react-redux';
-import { getUsersFilter } from '../../redux/users-selectors';
+import { useSelector } from 'react-redux'
+import { getUsersFilter } from '../../redux/users-selectors'
+import s from './Users.module.css'
 
 const usersSearchFormValidate = (values: any) => {
     const errors = {};
@@ -48,7 +49,7 @@ const UsersSearchForm: React.FC<PropsType> = React.memo(({ onFilterChanged }) =>
     }
 
     return (
-        <div>
+        <div className={s.searchForm}>
             <h1>Search</h1>
             <Formik
                 enableReinitialize={true}

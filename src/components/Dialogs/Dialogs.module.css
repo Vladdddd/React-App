@@ -8,12 +8,10 @@
     grid-template-columns: 3fr 10fr;
     grid-template-rows: 2fr;
     color: #3f3e5e;
-    border-radius: 10px 0px 0 10px;
     width: 30%;
     height: 700px;
 
     background-color: white;
-    margin: 25px;
     margin-right: 0;
 }
 
@@ -48,7 +46,7 @@
 }
 
 .selectedDialog {
-    margin: 25px;
+
     margin-left: 0;
 
     background: linear-gradient(rgba(97,93,250, 0.7), rgba(97,93,250, 0.9)), linear-gradient(white, white);
@@ -57,7 +55,6 @@
     width: 70%;
     height: 700px;
 
-    border-radius: 0px 10px 10px 0px;
     opacity: 1;
     display: flex;
     align-items: center;

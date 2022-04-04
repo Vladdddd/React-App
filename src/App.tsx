@@ -21,27 +21,32 @@ import { UsersPage } from './components/Users/UsersContainer'
 import { ProfilePage } from './components/Profile/ProfileContainer'
 import { HeaderComponent } from './components/Header/Header'
 
-import Button from 'antd/lib/button';
-import Layout from 'antd/lib/layout';
-import { Content, Footer, Header } from 'antd/lib/layout/layout';
-import Menu from 'antd/lib/menu';
-import Breadcrumb from 'antd/lib/breadcrumb';
-import Sider from 'antd/lib/layout/Sider';
-import SubMenu from 'antd/lib/menu/SubMenu';
+import Button from 'antd/lib/button'
+import Layout from 'antd/lib/layout'
+import { Content, Footer, Header } from 'antd/lib/layout/layout'
+import Menu from 'antd/lib/menu'
+import Breadcrumb from 'antd/lib/breadcrumb'
+import Sider from 'antd/lib/layout/Sider'
+import SubMenu from 'antd/lib/menu/SubMenu'
 import {
     UserOutlined,
     LaptopOutlined,
     MenuUnfoldOutlined,
     MenuFoldOutlined
-} from '@ant-design/icons';
-import Result from 'antd/lib/result';
+} from '@ant-design/icons'
+import Result from 'antd/lib/result'
+
 
 
 
 //React lazy - ленивая загрузка, компоненты загружаются по мере необходимости
-const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
+const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'))
 //const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
 //const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'));
+const ChatPage = React.lazy(() =>
+  import('./pages/Chat/ChatPage')
+    .then(({ ChatPage }) => ({ default: ChatPage })),
+);
 
 type StatePropsType = ReturnType<typeof mapStateToProps>
 type DispatchPropsType = {
@@ -99,16 +104,20 @@ class App extends Component<StatePropsType & DispatchPropsType> {
                                 <SubMenu key="sub1" icon={<UserOutlined />} title="My Profile">
                                     <Menu.Item key="1"><Link to={"/profile"}>Profile</Link></Menu.Item>
                                     <Menu.Item key="2"><Link to="/dialogs">Messages</Link></Menu.Item>
+                                    <Menu.Item key="3"><Link to="/chat">Chat</Link></Menu.Item>
                                 </SubMenu>
 
                                 <SubMenu key="sub2" icon={<LaptopOutlined />} title="Users">
-                                    <Menu.Item key="5"><Link to="/users">Users</Link></Menu.Item>
+                                    <Menu.Item key="4"><Link to="/users">Users</Link></Menu.Item>
                                 </SubMenu>
 
                                 <SubMenu key="sub3" icon={<LaptopOutlined />} title="Other">
-                                    <Menu.Item key="6"><Link to="/news">News</Link></Menu.Item>
-                                    <Menu.Item key="7"><Link to="/info">Info</Link></Menu.Item>
+                                    <Menu.Item key="5"><Link to="/news">News</Link></Menu.Item>
+                                    <Menu.Item key="6"><Link to="/info">Info</Link></Menu.Item>
                                 </SubMenu>
+                                
+                               
+                                
                             </Menu>
                         </Sider>
                         <Content style={{ padding: '0 24px', minHeight: 280 }}>
@@ -122,6 +131,7 @@ class App extends Component<StatePropsType & DispatchPropsType> {
                                         <Route path='/login' render={() => <Login />} />
                                         <Route path='/news' render={() => <NewsContainer />} />
                                         <Route path='/info' render={() => <Info />} />
+                                        <Route path='/chat' render={() => <ChatPage />} />
                                         <Route path='*' render={() => <Result
                                             status="404"
                                             title="404"

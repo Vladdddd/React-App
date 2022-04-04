@@ -57,7 +57,6 @@ export const getAuth = (): ThunkType => async (dispatch) => {
         let { id, email, login } = data.data;
         dispatch(actions.setAuthUserDataAC(id, email, login, true));
     }
-
 }
 
 export const login = (email: string, password: string, rememberMe: boolean, captcha: any): ThunkType => async (dispatch: any) => {

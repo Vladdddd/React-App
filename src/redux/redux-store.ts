@@ -9,6 +9,7 @@ import thunkMiddleware, { ThunkAction } from "redux-thunk"
 import {reducer as formReducer} from "redux-form"
 import { compose } from 'redux'
 import newsReducer from "./news-reducer"
+import chatReducer from "./chat-reducer"
 
 const { createStore } = require("redux")
 
@@ -20,7 +21,8 @@ let rootReducer = combineReducers({ // Соединяет все reducer'ы в s
     auth: authReducer,
     form: formReducer,
     app: appReducer,
-    news: newsReducer
+    news: newsReducer,
+    chat: chatReducer
 })
 
 type RootReducerType = typeof rootReducer; //(globalstate: GLOBALSTATE) => GLOBALSTATE 

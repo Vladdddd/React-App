@@ -23,5 +23,5 @@
   },
   "include": [
     "**/*.ts"
-, "src/components/common/Paginator/Paginator.tsx", "src/components/common/formsControls/formsControls.tsx", "src/hoc/withAuthRedirect.tsx", "src/hoc/withAuthRedirect.tsx", "src/App.tsx", "src/App.test.tsx"  ]
+, "src/components/common/Paginator/Paginator.tsx", "src/components/common/formsControls/formsControls.tsx", "src/hoc/withAuthRedirect.tsx", "src/hoc/withAuthRedirect.tsx", "src/components/src/components/App/App.test.tsxrc/App.test.tsx", "src"]
 }

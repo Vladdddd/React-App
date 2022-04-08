@@ -13,7 +13,7 @@ let initialState = {
     profile: null as unknown as ProfileType,
     fullnes: 0,
     status: '',
-    temporarilyForFriends: 'Andrii'
+    temporarilyForFriends: ['Andrii']
 };
 
 

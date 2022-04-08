@@ -2,15 +2,16 @@ import React from 'react';
 import Article from './Article';
 import s from './news.module.css';
 import DailyTop from './DailyTop';
-import { NewsType, TopNewsType } from '../../types/types';
+import { useSelector } from 'react-redux';
+import { AppStateType } from '../../redux/redux-store';
 
-type PropsType = {
-    news: Array<NewsType>
-    topNews: Array<TopNewsType>
-}
+type PropsType = {}
 
-const News: React.FC<PropsType> = ({news, topNews}) => {
+export const News: React.FC<PropsType> = (props) => {
     
+    const news = useSelector((state: AppStateType) => state.news.news) 
+    const topNews = useSelector((state: AppStateType) => state.news.topNews)
+
     let article = news.map(n => <Article key={n.id} name={n.name} news={n.news} role={n.role} time={n.time} photo={n.photo}/>);
     let top = topNews.map((t, index) => <DailyTop key={index+10} name={t.name} caption={t.caption} time={t.time}/>);
 
@@ -27,5 +28,3 @@ const News: React.FC<PropsType> = ({news, topNews}) => {
         </div>
     );
 }
-
-export default News;

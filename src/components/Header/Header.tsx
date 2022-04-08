@@ -33,7 +33,7 @@ export const HeaderComponent: React.FC = (props) => {
                     </Menu>
                 </Col>
                 <Col span={2}>
-                    <Avatar shape="square" icon={<UserOutlined />} />
+                    <Avatar shape="square" icon={<UserOutlined />} alt={login ? login : ''}/>
                     <div className={s.loginBlock}>
                         {isAuth
                             ? <Button onClick={logoutCallback}>Logout</Button>

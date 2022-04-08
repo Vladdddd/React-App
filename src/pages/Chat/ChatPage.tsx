@@ -25,7 +25,7 @@ const Chat: React.FC = () => {
         return () => {
             dispatch(stopMessagesListening())
         }
-    }, [])
+    }, [dispatch])
 
     return (
         <div>
@@ -47,7 +47,7 @@ const Messages: React.FC<{}> = () => {
         if(isAutoScroll) {
             messagesAnchorRef.current?.scrollIntoView({behavior: 'smooth'})
         }
-    }, [messages])
+    }, [messages, isAutoScroll])
 
     const scrollHandler = (e: React.UIEvent<HTMLDivElement, UIEvent>) => {
         const element = e.currentTarget
@@ -71,7 +71,7 @@ const Message: React.FC<{ message: ChatMessageType }> = React.memo(({ message })
 
     return (
         <div>
-            <img src={message.photo} width="30px" /><b>{message.userName}</b>
+            <img src={message.photo} width="30px" alt={''}/><b>{message.userName}</b>
             <br />
             <p>{message.message}</p>
             <hr />

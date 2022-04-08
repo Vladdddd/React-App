@@ -1,5 +1,5 @@
 import Paragraph from 'antd/lib/typography/Paragraph';
-import React, {useState, useEffect, ChangeEvent} from 'react';
+import React from 'react';
 import s from './ProfileInfo.module.css'
 
 type PropsType = {

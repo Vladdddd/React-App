@@ -1,15 +1,15 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { AppStateType } from '../../redux/redux-store';
 import Friend from './Friend';
-import  s from './friends.module.css';
+import s from './friends.module.css';
 
-type PropsType = {
-    friends: string
-}
+const Friends: React.FC = () => {
+    const friends = useSelector((state: AppStateType) => state.profilePage.temporarilyForFriends)
 
-const Friends: React.FC<PropsType> = (props) => {
     return (
         <div className={s.friends}>
-            <Friend />
+            {friends?.map((friend, index) => <Friend friend={friend} key={index}/>)}
         </div>
     );
 }

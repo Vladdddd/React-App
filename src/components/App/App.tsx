@@ -15,10 +15,10 @@ import { HeaderComponent } from '../Header/Header'
 
 import Layout from 'antd/lib/layout'
 import { Content, Footer } from 'antd/lib/layout/layout'
-import Breadcrumb from 'antd/lib/breadcrumb'
 
 import Nav from '../NavBar/Nav';
 import { ContentApp } from './Content';
+import BreadcrumbApp from './Breadcrumb';
 
 
 type StatePropsType = ReturnType<typeof mapStateToProps>
@@ -49,11 +49,7 @@ class App extends Component<StatePropsType & DispatchPropsType> {
             <Layout>
                 <HeaderComponent />
                 <Content style={{ padding: '0 50px' }}>
-                    <Breadcrumb style={{ margin: '10px 0 5px' }}>
-                        <Breadcrumb.Item>Home</Breadcrumb.Item>
-                        <Breadcrumb.Item>List</Breadcrumb.Item>
-                        <Breadcrumb.Item>App</Breadcrumb.Item>
-                    </Breadcrumb>
+                    <BreadcrumbApp />
                     <Layout className="site-layout-background">
                         <Nav />
                         <ContentApp />

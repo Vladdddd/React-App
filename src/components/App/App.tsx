@@ -20,6 +20,17 @@ import Nav from '../NavBar/Nav';
 import { ContentApp } from './Content';
 import BreadcrumbApp from './Breadcrumb';
 
+const paths = {
+    profile: '/profile',
+    dialogs: '/dialogs',
+    chat: '/chat',
+    users: '/users',
+    news: '/news',
+    info: '/info',
+    login: '/login'
+}
+
+export type PathsType = typeof paths
 
 type StatePropsType = ReturnType<typeof mapStateToProps>
 type DispatchPropsType = {
@@ -49,10 +60,10 @@ class App extends Component<StatePropsType & DispatchPropsType> {
             <Layout>
                 <HeaderComponent />
                 <Content style={{ padding: '0 50px' }}>
-                    <BreadcrumbApp />
+                    <BreadcrumbApp paths={paths}/>
                     <Layout className="site-layout-background">
-                        <Nav />
-                        <ContentApp />
+                        <Nav paths={paths}/>
+                        <ContentApp paths={paths}/>
                     </Layout>
                 </Content>
             </Layout>

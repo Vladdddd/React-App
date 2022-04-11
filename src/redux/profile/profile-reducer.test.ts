@@ -21,7 +21,7 @@ beforeEach(() => {
         },
         fullnes: 0,
         status: '',
-        temporarilyForFriends: 'Andrii'
+        temporarilyForFriends: ['Andrii']
     }
 })
 

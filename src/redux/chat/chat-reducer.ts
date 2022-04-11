@@ -1,6 +1,6 @@
 import { Dispatch } from "redux";
-import { chatAPI, ChatMessageType, StatusType } from "../api/chat-api";
-import { BaseThunkType, InferActionsTypes } from "./redux-store";
+import { chatAPI, ChatMessageType, StatusType } from "../../api/chat-api";
+import { BaseThunkType, InferActionsTypes } from "../redux-store";
 import { v1 } from 'uuid'
 
 

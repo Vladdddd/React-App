@@ -3,7 +3,7 @@ import TextArea from 'rc-textarea'
 import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { ChatMessageType } from '../../api/chat-api'
-import { sendMessage, startMessagesListening, stopMessagesListening } from '../../redux/chat-reducer'
+import { sendMessage, startMessagesListening, stopMessagesListening } from '../../redux/chat/chat-reducer'
 import { AppStateType } from '../../redux/redux-store'
 
 

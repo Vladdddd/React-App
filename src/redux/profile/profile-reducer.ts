@@ -1,7 +1,7 @@
-import { ResultCodesEnum } from "../api/api"
-import { profileAPI } from "../api/profile-api"
-import { PhotosType, PostType, ProfileType } from "../types/types"
-import { BaseThunkType, InferActionsTypes } from "./redux-store"
+import { ResultCodesEnum } from "../../api/api"
+import { profileAPI } from "../../api/profile-api"
+import { PhotosType, PostType, ProfileType } from "../../types/types"
+import { BaseThunkType, InferActionsTypes } from "../redux-store"
 
 let initialState = {
     posts: [

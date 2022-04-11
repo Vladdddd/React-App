@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { InjectedFormProps, reduxForm } from 'redux-form';
 import { createField, GetStringKeys, Input } from '../common/formsControls/formsControls';
 import { maxLengthCreator, required } from '../utils/validators';
-import { login } from '../../redux/auth-reducer';
+import { login } from '../../redux/auth/auth-reducer';
 import { Redirect } from 'react-router';
 import s from './login.module.css';
 import { AppStateType } from '../../redux/redux-store';

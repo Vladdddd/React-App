@@ -4,8 +4,8 @@ import Paginator from '../common/Paginator/Paginator';
 import User from './User';
 import TopUser from './TopUser';
 import UsersSearchForm  from './UsersSearchForm';
-import { FilterType, follow, requestUsers, unfollow } from '../../redux/users-reducer';
-import { getCurrentPage, getFollowingInProgress, getPageSize, getTotalUsersCount, getUsers, getUsersFilter } from '../../redux/users-selectors';
+import { FilterType, follow, requestUsers, unfollow } from '../../redux/users/users-reducer';
+import { getCurrentPage, getFollowingInProgress, getPageSize, getTotalUsersCount, getUsers, getUsersFilter } from '../../redux/users/users-selectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import queryString from 'query-string'

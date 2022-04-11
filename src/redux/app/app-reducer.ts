@@ -1,5 +1,5 @@
-import { getAuth } from "./auth-reducer";
-import { BaseThunkType, InferActionsTypes } from "./redux-store";
+import { getAuth } from "../auth/auth-reducer";
+import { BaseThunkType, InferActionsTypes } from "../redux-store";
 
 let initialState = {// "Стартовый"/ инициализационный/ начальный state
     initialized: false

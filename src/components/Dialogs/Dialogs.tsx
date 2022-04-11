@@ -5,7 +5,7 @@ import Message from "./Message/Message";
 import { InjectedFormProps, reduxForm } from 'redux-form';
 import { maxLengthCreator, required } from '../utils/validators';
 import { createField, Input, Textarea } from '../common/formsControls/formsControls';
-import { InitialStateType } from '../../redux/dialogs-reducer';
+import { InitialStateType } from '../../redux/dialogs/dialogs-reducer';
 
 const maxLength60 = maxLengthCreator(60);
 

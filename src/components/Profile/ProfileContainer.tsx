@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { Profile } from './Profile'
 import { useDispatch, useSelector } from 'react-redux'
-import { getProfile, getStatus } from '../../redux/profile-reducer'
-import { actions } from '../../redux/auth-reducer'
+import { getProfile, getStatus } from '../../redux/profile/profile-reducer'
+import { actions } from '../../redux/auth/auth-reducer'
 import { AppStateType } from '../../redux/redux-store'
 import { Redirect, useHistory, useRouteMatch } from 'react-router'
 

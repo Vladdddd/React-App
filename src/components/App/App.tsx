@@ -9,7 +9,7 @@ import { withRouter } from 'react-router-dom'
 import { compose } from 'redux'
 import store, { AppStateType } from '../../redux/redux-store'
 
-import { initializeApp } from '../../redux/app-reducer'
+import { initializeApp } from '../../redux/app/app-reducer'
 import Preloader from '../common/preloader/preloader'
 import { HeaderComponent } from '../Header/Header'
 

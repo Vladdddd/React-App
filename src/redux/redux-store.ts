@@ -1,15 +1,15 @@
 import {Action, applyMiddleware, combineReducers} from "redux"
-import profileReducer from "./profile-reducer"
-import dialogsReducer from "./dialogs-reducer"
-import sidebarReducer from "./sidebar-reducer"
-import usersReducer from "./users-reducer"
-import authReducer from "./auth-reducer"
-import appReducer from "./app-reducer"
+import profileReducer from "./profile/profile-reducer"
+import dialogsReducer from "./dialogs/dialogs-reducer"
+import sidebarReducer from "./sidebar/sidebar-reducer"
+import usersReducer from "./users/users-reducer"
+import authReducer from "./auth/auth-reducer"
+import appReducer from "./app/app-reducer"
 import thunkMiddleware, { ThunkAction } from "redux-thunk"
 import {reducer as formReducer} from "redux-form"
 import { compose } from 'redux'
-import newsReducer from "./news-reducer"
-import chatReducer from "./chat-reducer"
+import newsReducer from "./news/news-reducer"
+import chatReducer from "./chat/chat-reducer"
 
 const { createStore } = require("redux")
 

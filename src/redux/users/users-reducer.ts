@@ -1,10 +1,10 @@
 import { Dispatch } from "redux";
 import { ThunkAction } from "redux-thunk";
-import { ResponseType, ResultCodesEnum} from "../api/api";
-import { usersAPI } from "../api/users-api";
-import { updateObjectInArray } from "../components/utils/object-helpers";
-import { UserType } from "../types/types";
-import { InferActionsTypes, AppStateType } from "./redux-store";
+import { ResponseType, ResultCodesEnum} from "../../api/api";
+import { usersAPI } from "../../api/users-api";
+import { updateObjectInArray } from "../../components/utils/object-helpers";
+import { UserType } from "../../types/types";
+import { InferActionsTypes, AppStateType } from "../redux-store";
 
 
 let initialState = {

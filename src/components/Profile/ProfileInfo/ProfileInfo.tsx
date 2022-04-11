@@ -7,7 +7,7 @@ import cn from 'classnames';
 import ProfileNav from './ProfileNav';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppStateType } from '../../../redux/redux-store';
-import { savePhoto, updateStatus } from '../../../redux/profile-reducer';
+import { savePhoto, updateStatus } from '../../../redux/profile/profile-reducer';
 
 
 const ProfileInfo: React.FC = (props) => {

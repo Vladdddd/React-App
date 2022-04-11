@@ -1,4 +1,4 @@
-import { FriendType } from "../types/types";
+import { FriendType } from "../../types/types";
 
 let initialState = {
     friends: [

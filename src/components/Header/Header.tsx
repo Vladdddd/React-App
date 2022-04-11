@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { logout } from '../../redux/auth-reducer';
+import { logout } from '../../redux/auth/auth-reducer';
 import s from './header.module.css'
 
 import { Header } from 'antd/lib/layout/layout';
@@ -10,7 +10,7 @@ import Menu from 'antd/lib/menu';
 import Avatar from 'antd/lib/avatar';
 import { UserOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectIsAuth, selectLogin } from '../../redux/auth-selectors';
+import { selectIsAuth, selectLogin } from '../../redux/auth/auth-selectors';
 import Button from 'antd/lib/button';
 
 export const HeaderComponent: React.FC = (props) => {
@@ -34,6 +34,7 @@ export const HeaderComponent: React.FC = (props) => {
                 </Col>
                 <Col span={2}>
                     <Avatar shape="square" icon={<UserOutlined />} alt={login ? login : ''}/>
+
                     <div className={s.loginBlock}>
                         {isAuth
                             ? <Button onClick={logoutCallback}>Logout</Button>

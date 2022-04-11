@@ -1,4 +1,4 @@
-import { NewsType, TopNewsType } from "../types/types";
+import { NewsType, TopNewsType } from "../../types/types";
 
 
 let initialState = {

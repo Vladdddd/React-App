@@ -6,16 +6,17 @@ import art from '../../../assets/images/second-profile-art.jpg';
 import cn from 'classnames';
 import ProfileNav from './ProfileNav';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppStateType } from '../../../redux/redux-store';
 import { savePhoto, updateStatus } from '../../../redux/profile/profile-reducer';
+import { selectProfile, selectStatus } from '../../../redux/profile/profile-selectors';
+import { selectIsMe, selectUserId } from '../../../redux/auth/auth-selectors';
 
 
 const ProfileInfo: React.FC = (props) => {
 
-    const profile = useSelector((state: AppStateType) => state.profilePage.profile)
-    const status = useSelector((state: AppStateType) => state.profilePage.status)
-    const isOwner = useSelector((state: AppStateType) => state.auth.isMe)
-    const userId = useSelector((state: AppStateType) => state.auth.userId)
+    const profile = useSelector(selectProfile)
+    const status = useSelector(selectStatus)
+    const isOwner = useSelector(selectIsMe)
+    const userId = useSelector(selectUserId)
 
     const dispatch = useDispatch()
 

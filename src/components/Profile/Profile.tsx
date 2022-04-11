@@ -6,9 +6,6 @@ type PropsType = {
 }
 
 export const Profile: React.FC<PropsType> = () => {
-
-
-
     return (
         <main>
             <ProfileInfo />

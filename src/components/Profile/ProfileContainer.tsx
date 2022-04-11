@@ -5,6 +5,7 @@ import { getProfile, getStatus } from '../../redux/profile/profile-reducer'
 import { actions } from '../../redux/auth/auth-reducer'
 import { AppStateType } from '../../redux/redux-store'
 import { Redirect, useHistory, useRouteMatch } from 'react-router'
+import { selectIsAuth, selectUserId } from '../../redux/auth/auth-selectors'
 
 type MatchType = {
     isExact: boolean
@@ -20,8 +21,8 @@ export const ProfilePage: React.FC = (props) => {
     let history: any = useHistory()
     let match: MatchType = useRouteMatch()
 
-    const authorizedUserId = useSelector((state: AppStateType) => state.auth.userId)
-    const isAuth = useSelector((state: AppStateType) => state.auth.isAuth)
+    const authorizedUserId = useSelector(selectUserId)
+    const isAuth = useSelector(selectIsAuth)
 
     const dispatch = useDispatch() 
     

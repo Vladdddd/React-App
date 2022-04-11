@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { ChatMessageType } from '../../api/chat-api'
 import { sendMessage, startMessagesListening, stopMessagesListening } from '../../redux/chat/chat-reducer'
+import { selectChatStatus, selectMessages } from '../../redux/chat/chat-selectors'
 import { AppStateType } from '../../redux/redux-store'
 
 
@@ -18,7 +19,7 @@ export const ChatPage: React.FC = () => {
 const Chat: React.FC = () => {
 
     const dispatch = useDispatch()
-    const status = useSelector((state: AppStateType) => state.chat.status)
+    const status = useSelector(selectChatStatus)
 
     useEffect(() => {
         dispatch(startMessagesListening())
@@ -39,7 +40,7 @@ const Chat: React.FC = () => {
 
 const Messages: React.FC<{}> = () => {
 
-    const messages = useSelector((state: AppStateType) => state.chat.messages)
+    const messages = useSelector(selectMessages)
     const messagesAnchorRef = useRef<HTMLDivElement>(null)
     const [isAutoScroll, setIsAutoScroll] = useState(true)
 
@@ -83,7 +84,7 @@ const AddMassageForm: React.FC<{}> = () => {
 
     const [message, setMessage] = useState('')
 
-    const status = useSelector((state: AppStateType) => state.chat.status)
+    const status = useSelector(selectChatStatus)
     const dispatch = useDispatch()
 
     const sendMessageHandler = () => {

@@ -7,3 +7,7 @@ export const selectProfile = (state: AppStateType) => {
 export const selectPhotos = (state: AppStateType) => {
     return state.profilePage.profile?.photos
 }
+
+export const selectStatus = (state: AppStateType) => {
+    return state.profilePage.status
+}
